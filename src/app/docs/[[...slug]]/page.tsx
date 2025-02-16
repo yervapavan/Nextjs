@@ -11,6 +11,6 @@ export default function docs({params}:{params:{
                 }
                 else{
                         return(
-                        <h1>Docs Page</h1>)
+                        <h1>Welcome to docs Page</h1>)
                 }
 }
