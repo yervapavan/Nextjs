@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import React from "react"
 
 export const metadata:Metadata={
         title:{
@@ -10,10 +11,12 @@ export const metadata:Metadata={
 export default function Layout({children,
         notifications,
         revenue,
-        users
+        users,
+        login
 
-}:{children:React.ReactNode,notifications:React.ReactNode,revenue:React.ReactNode,users:React.ReactNode}){
-        return(
+}:{children:React.ReactNode,notifications:React.ReactNode,revenue:React.ReactNode,users:React.ReactNode,login:React.ReactNode}){
+        const isloggedin=false
+        return isloggedin?(
                 <>
                 {children}
                 <div className="flex flex-row h-screen w-full">
@@ -26,6 +29,10 @@ export default function Layout({children,
                         </div>
 
                 </div>
+                </>
+        ):(
+                <>
+                {login}
                 </>
         )
 }
